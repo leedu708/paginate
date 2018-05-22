@@ -1,9 +1,9 @@
-function Paginate(arrLength, limit) {
+function Paginate(lengthIn, limitIn) {
   let p = {};
 
   // initialize variables
-  let _length = arrLength,
-      _limit = limit,
+  let _length = lengthIn.length || lengthIn,
+      _limit = limitIn,
       _pageCount = 0,
       _curPage = 0;
 
@@ -33,7 +33,7 @@ function Paginate(arrLength, limit) {
 
   // setters
   p.setLength = (input) => {
-    input.length ? _length = input.length : _length = input;
+    _length = input.length || input;
     _setPageCount();
     p.resetCurrentPage();
   };
