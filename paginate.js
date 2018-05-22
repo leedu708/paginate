@@ -22,6 +22,7 @@ function Paginate(lengthIn, limitIn) {
   p.getLimit = () => _limit;
   p.getTotalPages = () => _pageCount;
   p.getPage = () => _curPage;
+  p.getCurrentIndex = () => _curPage * _limit;
   p.getLowerIndex = () => _curPage * _limit + 1;
   p.getUpperIndex = () => {
     if (p.canMove(1)) {
